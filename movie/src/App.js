@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import './index.css';
 import SearchIcon from './search.svg'
 import MovieCard from "./MovieCard";
-const API_KEY = 'api key here'
+const API_KEY = '9030ba7'
 const API_URL = 'http://omdbapi.com?apikey=' + API_KEY;
 
 
