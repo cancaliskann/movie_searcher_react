@@ -1,7 +1,20 @@
 // 9030ba7
 import { useEffect } from "react";
-const API_KEY = 'apikeyhere'
+
+import './index.css';
+import SearchIcon from './search.svg'
+const API_KEY = ''
 const API_URL = 'http://omdbapi.com?apikey=' + API_KEY;
+
+const movie1 ={
+  
+    "Title": "Batman",
+    "Year": "1989",
+    "imdbID": "tt0096895",
+    "Type": "movie",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BZWQ0OTQ3ODctMmE0MS00ODc2LTg0ZTEtZWIwNTUxOGExZTQ4XkEyXkFqcGdeQXVyNzAwMjU2MTY@._V1_SX300.jpg"
+
+}
 
 
 function App() {
@@ -18,13 +31,40 @@ function App() {
 
 
   useEffect(() => {
-    searchMovies('spiderman');
+    searchMovies('BatMan');
   
   }, []);
 
   return (
-    <div className="App">
-     test 123
+    <div className="app">
+      <h1> MovieTest </h1>
+      <div className="search">
+        <input 
+        placeholder="Search for movies"
+        value="Batman"
+        onChange={() => {}}
+        />
+
+        <img src={SearchIcon} 
+        alt="search"
+        onClick={() => {}}
+        />
+      </div>
+      <div className="container">
+        <div className="movie">
+          <div>
+            <p> {movie1.Year}</p>
+          </div>
+          <div>
+            <img src={movie1.Poster !== 'N/A' ? movie1.Poster : 'https://via.placeholder.com/400' } alt={movie1.title} />
+          </div>
+          <div>
+            <span>{movie1.Type } </span>
+            <h3>{movie1.Title}</h3>
+          </div>
+        </div>
+
+      </div>
     </div>
   );
 }
